@@ -85,8 +85,9 @@ if isinstance(t2,str):
 		t2 = time.time()
 	else:
 		t2 = time.mktime(datetime.strptime(t2, "%Y-%m-%d %H:%M:%S.%f").timetuple())
-		nT = np.floor((t2-t0)/DT)
-		rest =  t2-t0 - nT*DT
+	
+	nT = np.floor((t2-t0)/DT)
+	rest =  t2-t0 - nT*DT
 else:
 	nT = args.nT
 
