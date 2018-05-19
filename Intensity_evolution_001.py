@@ -81,9 +81,12 @@ import time
 t0 = time.mktime(datetime.strptime(t0, "%Y-%m-%d %H:%M:%S.%f").timetuple())
 DT = 3600 # an hour
 if isinstance(t2,str):
-	t2 = time.mktime(datetime.strptime(t2, "%Y-%m-%d %H:%M:%S.%f").timetuple())
-	nT = np.floor((t2-t0)/DT)
-	rest =  t2-t0 - nT*DT
+	if t2 == 'now':
+		t2 = time.time()
+	else:
+		t2 = time.mktime(datetime.strptime(t2, "%Y-%m-%d %H:%M:%S.%f").timetuple())
+		nT = np.floor((t2-t0)/DT)
+		rest =  t2-t0 - nT*DT
 else:
 	nT = args.nT
 
