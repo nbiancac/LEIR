@@ -197,9 +197,6 @@ except : pass
 
 
 
-
-rw = 1 # rolling window number of samples
-
 for n_inj in np.arange(N_inj):
 	fig,(ax1,ax2) = plt.subplots(2,1,figsize=(10,10), sharex = True)	
 	for var in bct_line_variables():
